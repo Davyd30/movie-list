@@ -1,12 +1,23 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { CommonModule } from '@angular/common';
+import { MovieService } from './movie.service';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, CommonModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 export class AppComponent {
   title = 'movie-list';
+
+  moviesList:any[]=[];
+
+  constructor(private movieService:MovieService) {}
+
+  ngOnInit() {
+    this.moviesList=this.movieService.getMovies();
+    console.log(this.moviesList);
+  }
 }
