@@ -1,7 +1,6 @@
-<h1>Movie Favourites</h1>
 <h2>Davyd Safonov S00255881</h2>
-<ul>
-  <li *ngFor="let movie of moviesList">{{movie.title}}
-    ({{movie.year}}) - Directed by {{movie.director}}
-  </li>
-</ul>
+<div class="container">
+  <h1>Movie Favourites</h1>
+  <app-add-movie></app-add-movie>
+  <app-list-movies></app-list-movies>
+</div>
